@@ -5,6 +5,8 @@
 
 This is a simple N-Body Particle Simulation application written in *HTML* and *JavaScript* using the *WebGL-API*.
 
+Online-Version: <https://nowca.github.io/n-body-simulation/nbody-simulation.html>
+
 <br>
 
 <h2>Particle Simulation Application</h2>
