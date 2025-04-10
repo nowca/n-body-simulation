@@ -68,11 +68,11 @@ The `WEBGL_W`-Object uses 4 main nodes:
 012 | var WEBGL_W = {
 013 |     context: undefined,
 014 |
-015 | HTML: {
+015 |     HTML: {
 ...
-021 | APP: {
+021 |     APP: {
 ...
-054 | EVENTS: {
+054 |     EVENTS: {
 ...
 062 | };
 ```
@@ -143,50 +143,50 @@ The `computeNBody` function in the `NBODY_APP.DATA.ParticleCluster`-sub-object i
 
 
 ```javascript 
-this.computeNBody = function()
-{
-    // for each particle
-    for (var i = 0; i < this.N; i++)
-    {
-        if (i != j) // ignore accelerating particle
-        { 
-            this.ax[i] = 0.0;
-            this.ay[i] = 0.0;
-            this.az[i] = 0.0;
-            this.f[i] = 0.0;
-
-            // for each other particle
-            for (var j = 0; j < this.N; j++)
-            {
-                var dx = this.rx[j] - this.rx[i];
-                var dy = this.ry[j] - this.ry[i];
-                var dz = this.rz[j] - this.rz[i];
-
-                var R_ij  = Math.sqrt(dx * dx + dy * dy + dz * dz + eps);
-                var R_ij3 = (R_ij * R_ij * R_ij);
-
-                var f = this.G * this.m[j] / R_ij3;
-
-                this.f[i] += f;
-
-                // set acceleration
-                this.ax[i] += f * dx;
-                this.ay[i] += f * dy;
-                this.az[i] += f * dz;
-            }
-
-            // set velocity
-            this.vx[i] += this.ax[i] * this.dt;
-            this.vy[i] += this.ay[i] * this.dt;
-            this.vz[i] += this.az[i] * this.dt;
-
-            // set position
-            this.rx[i] += this.vx[i] * this.dt;
-            this.ry[i] += this.vy[i] * this.dt;
-            this.rz[i] += this.vz[i] * this.dt;
-        }
-    }
-};
+233 | this.computeNBody = function()
+234 | {
+235 |     // for each particle
+236 |     for (var i = 0; i < this.N; i++)
+237 |     {
+238 |         if (i != j) // ignore accelerating particle
+239 |         { 
+240 |             this.ax[i] = 0.0;
+241 |             this.ay[i] = 0.0;
+242 |             this.az[i] = 0.0;
+243 |             this.f[i] = 0.0;
+244 | 
+245 |             // for each other particle
+246 |             for (var j = 0; j < this.N; j++)
+247 |             {
+248 |                 var dx = this.rx[j] - this.rx[i];
+249 |                 var dy = this.ry[j] - this.ry[i];
+250 |                 var dz = this.rz[j] - this.rz[i];
+251 | 
+252 |                 var R_ij  = Math.sqrt(dx * dx + dy * dy + dz * dz + eps);
+253 |                 var R_ij3 = (R_ij * R_ij * R_ij);
+254 | 
+255 |                 var f = this.G * this.m[j] / R_ij3;
+256 | 
+257 |                 this.f[i] += f;
+258 | 
+259 |                 // set acceleration
+260 |                 this.ax[i] += f * dx;
+261 |                this.ay[i] += f * dy;
+262 |                this.az[i] += f * dz;
+263 |            }
+264 |
+265 |            // set velocity
+266 |            this.vx[i] += this.ax[i] * this.dt;
+267 |            this.vy[i] += this.ay[i] * this.dt;
+268 |            this.vz[i] += this.az[i] * this.dt;
+269 |
+270 |            // set position
+271 |             this.rx[i] += this.vx[i] * this.dt;
+272 |             this.ry[i] += this.vy[i] * this.dt;
+273 |             this.rz[i] += this.vz[i] * this.dt;
+274 |         }
+275 |     }
+276 | };
 ```
 
 First we need to calculate the acceleration of n particles with the N-Body Problem, so we can derive the velocity and position from another.

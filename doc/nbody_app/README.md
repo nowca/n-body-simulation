@@ -52,24 +52,24 @@ This is the Particle-Cluster-Object, with all the particle-data like the positio
 ```javascript 
 111 | NBODY_APP.DATA.ParticleCluster = new function()
 112 | {
-113 | this.BODY_MASSES    = [];
-114 | this.BODY_POSITIONS = [];
-115 | this.N = 0;
+113 |    this.BODY_MASSES    = [];
+114 |    this.BODY_POSITIONS = [];
+115 |    this.N = 0;
 116 |
-117 | this.rx = [];
-118 | this.ry = [];
-119 | this.rz = [];
-120 | this.vx = [];
-121 | this.vy = [];
-122 | this.vz = [];
-123 | this.ax = [];
-124 | this.ay = [];
-125 | this.az = [];
-126 | this.m  = [];
-127 | this.f  = [];
+117 |    this.rx = [];
+118 |    this.ry = [];
+119 |    this.rz = [];
+120 |    this.vx = [];
+121 |    this.vy = [];
+122 |    this.vz = [];
+123 |    this.ax = [];   
+124 |    this.ay = [];
+125 |    this.az = [];
+126 |    this.m  = [];
+127 |    this.f  = [];
 ... |
-129 | this.G = NBODY_APP.CONFIG.gravityConstant * Math.pow(10.0,-11.0);
-130 | this.dt = NBODY_APP.CONFIG.deltaTime;
+129 |    this.G = NBODY_APP.CONFIG.gravityConstant * Math.pow(10.0,-11.0);
+130 |    this.dt = NBODY_APP.CONFIG.deltaTime;
 ...
 ```
 
