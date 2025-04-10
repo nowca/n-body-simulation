@@ -181,9 +181,9 @@ The `computeNBody` function in the `NBODY_APP.DATA.ParticleCluster`-sub-object i
 268 |            this.vz[i] += this.az[i] * this.dt;
 269 |
 270 |            // set position
-271 |             this.rx[i] += this.vx[i] * this.dt;
-272 |             this.ry[i] += this.vy[i] * this.dt;
-273 |             this.rz[i] += this.vz[i] * this.dt;
+271 |            this.rx[i] += this.vx[i] * this.dt;
+272 |            this.ry[i] += this.vy[i] * this.dt;
+273 |            this.rz[i] += this.vz[i] * this.dt;
 274 |         }
 275 |     }
 276 | };
